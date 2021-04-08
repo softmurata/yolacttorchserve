@@ -59,7 +59,7 @@ def main():
             query += '"' + folder['id'] + '" in parents'
         query = '(' + query + ')'
         # query += ' and (name contains ".jpg" or name contains ".png" or name contains ".mp4")'
-        query += ' and (name contains ".pth"'
+        query += ' and (name contains ".pth")'
         
         results = drive.files().list(
             pageSize=100, 
