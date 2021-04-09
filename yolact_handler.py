@@ -155,9 +155,10 @@ class ModelHandler(BaseHandler):
         # save image
         save_path = "/home/ubuntu/murata/Media2Cloud/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
         cv2.imwrite(save_path, image_numpy)
-        # upload s3
-        file_name = "/home/ubuntu/murata/Media2Cloud/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
-        url = self.upload_file(file_name)
+        # upload s3(if you do aws configure command, you should activate following code)
+        # file_name = "/home/ubuntu/murata/Media2Cloud/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
+        # url = self.upload_file(file_name)
+        url = 'https://{}.s3.amazonaws.com/{}'.format(self.bucket, self.image_filename)
         json_output["url"] = url
 
         json_output = json.dumps(json_output)
