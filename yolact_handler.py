@@ -153,10 +153,10 @@ class ModelHandler(BaseHandler):
         image_numpy, json_output = self.prep_display(inference_output)
 
         # save image
-        save_path = "/home/ubuntu/murata/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
+        save_path = "/home/ubuntu/murata/Media2Cloud/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
         cv2.imwrite(save_path, image_numpy)
         # upload s3
-        file_name = "/home/ubuntu/murata/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
+        file_name = "/home/ubuntu/murata/Media2Cloud/Server/yolactserve/serve/image_dir/{}".format(self.image_filename)
         url = self.upload_file(file_name)
         json_output["url"] = url
 
