@@ -1,0 +1,9 @@
+torchserve
+torch-model-archiver
+opencv-python==4.2.0.34 
+pillow 
+boto3
+google-api-python-client 
+google-auth-httplib2 
+google-auth-oauthlib
+
